@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO: Steps 6, 7, & 9 - Set a listener on the top button:
             mRedBtn.setOnClickListener(v ->{
-                if (mRedJourney == 0){
+                if (mRedJourney == 0 && mStory == 0){
                     mStoryTv.setText(R.string.T3_Story);
                     mRedBtn.setText(R.string.T3_Ans1);
                     mBlueBtn.setText(R.string.T3_Ans2);
@@ -43,13 +43,13 @@ public class MainActivity extends AppCompatActivity {
                     mRedBtn.setVisibility(View.INVISIBLE);
                     mRedJourney++;
                     mStory++;
-                }else if(mStory == 1){
+                }else if(mStory == 1 && mBlueJourney == 1 && mRedJourney == 0){
                     mStoryTv.setText(R.string.T3_Story);
                     mRedBtn.setText(R.string.T3_Ans1);
                     mBlueBtn.setText(R.string.T3_Ans2);
                     mRedJourney++;
                     mStory++;
-                }else if(mStory == 2){
+                }else if(mStory == 2 && mBlueJourney == 1 && mRedJourney == 1){
                     mStoryTv.setText(R.string.T6_End);
                     mBlueBtn.setVisibility(View.INVISIBLE);
                     mRedBtn.setVisibility(View.INVISIBLE);
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO: Steps 6, 7, & 9 - Set a listener on the bottom button:
             mBlueBtn.setOnClickListener(v ->{
-                if (mBlueJourney == 0){
+                if (mBlueJourney == 0 && mStory == 0){
                     mStoryTv.setText(R.string.T2_Story);
                     mRedBtn.setText(R.string.T2_Ans1);
                     mBlueBtn.setText(R.string.T2_Ans2);
@@ -74,13 +74,13 @@ public class MainActivity extends AppCompatActivity {
                     mRedBtn.setVisibility(View.INVISIBLE);
                     mBlueJourney++;
                     mStory++;
-                }else if (mStory == 2) {
+                }else if (mRedJourney == 1 && mStory  == 2 && mBlueJourney == 1) {
                     mStoryTv.setText(R.string.T5_End);
                     mBlueBtn.setVisibility(View.INVISIBLE);
                     mRedBtn.setVisibility(View.INVISIBLE);
                     mBlueJourney++;
                     mStory++;
-                }else if (mStory == 1){
+                }else if (mStory == 1 && mRedJourney == 1 && mBlueJourney == 0){
                     mStoryTv.setText(R.string.T5_End);
                     mBlueBtn.setVisibility(View.INVISIBLE);
                     mRedBtn.setVisibility(View.INVISIBLE);
