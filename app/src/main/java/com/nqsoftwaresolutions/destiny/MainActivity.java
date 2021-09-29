@@ -13,6 +13,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView mStoryTv;
     private Button mRedBtn;
     private Button mBlueBtn;
+    private int mRedJourney;
+    private int mBlueJourney;
+    private int mStory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,18 +31,62 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO: Steps 6, 7, & 9 - Set a listener on the top button:
             mRedBtn.setOnClickListener(v ->{
-                mStoryTv.setText(R.string.T3_Story);
-                mRedBtn.setText(R.string.T3_Ans1);
-                mBlueBtn.setText(R.string.T3_Ans2);
+                if (mRedJourney == 0){
+                    mStoryTv.setText(R.string.T3_Story);
+                    mRedBtn.setText(R.string.T3_Ans1);
+                    mBlueBtn.setText(R.string.T3_Ans2);
+                    mRedJourney++;
+                    mStory++;
+                }else if (mRedJourney == 1 && mStory == 1){
+                    mStoryTv.setText(R.string.T6_End);
+                    mBlueBtn.setVisibility(View.INVISIBLE);
+                    mRedBtn.setVisibility(View.INVISIBLE);
+                    mRedJourney++;
+                    mStory++;
+                }else if(mStory == 1){
+                    mStoryTv.setText(R.string.T3_Story);
+                    mRedBtn.setText(R.string.T3_Ans1);
+                    mBlueBtn.setText(R.string.T3_Ans2);
+                    mRedJourney++;
+                    mStory++;
+                }else if(mStory == 2){
+                    mStoryTv.setText(R.string.T6_End);
+                    mBlueBtn.setVisibility(View.INVISIBLE);
+                    mRedBtn.setVisibility(View.INVISIBLE);
+                    mRedJourney++;
+                    mStory++;
+                }
             });
 
 
 
         // TODO: Steps 6, 7, & 9 - Set a listener on the bottom button:
             mBlueBtn.setOnClickListener(v ->{
-                mStoryTv.setText(R.string.T2_Story);
-                mRedBtn.setText(R.string.T2_Ans1);
-                mBlueBtn.setText(R.string.T2_Ans2);
+                if (mBlueJourney == 0){
+                    mStoryTv.setText(R.string.T2_Story);
+                    mRedBtn.setText(R.string.T2_Ans1);
+                    mBlueBtn.setText(R.string.T2_Ans2);
+                    mBlueJourney++;
+                    mStory++;
+                }else if (mBlueJourney == 1 && mStory == 1) {
+                    mStoryTv.setText(R.string.T4_End);
+                    mBlueBtn.setVisibility(View.INVISIBLE);
+                    mRedBtn.setVisibility(View.INVISIBLE);
+                    mBlueJourney++;
+                    mStory++;
+                }else if (mStory == 2) {
+                    mStoryTv.setText(R.string.T5_End);
+                    mBlueBtn.setVisibility(View.INVISIBLE);
+                    mRedBtn.setVisibility(View.INVISIBLE);
+                    mBlueJourney++;
+                    mStory++;
+                }else if (mStory == 1){
+                    mStoryTv.setText(R.string.T5_End);
+                    mBlueBtn.setVisibility(View.INVISIBLE);
+                    mRedBtn.setVisibility(View.INVISIBLE);
+                    mBlueJourney++;
+                    mStory++;
+                }
             });
 
     }
