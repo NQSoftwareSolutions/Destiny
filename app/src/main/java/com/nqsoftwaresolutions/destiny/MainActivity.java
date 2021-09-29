@@ -28,14 +28,18 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO: Steps 6, 7, & 9 - Set a listener on the top button:
             mRedBtn.setOnClickListener(v ->{
-                mStoryTv.setText(R.string.T2_Story);
+                mStoryTv.setText(R.string.T3_Story);
+                mRedBtn.setText(R.string.T3_Ans1);
+                mBlueBtn.setText(R.string.T3_Ans2);
             });
 
 
 
         // TODO: Steps 6, 7, & 9 - Set a listener on the bottom button:
             mBlueBtn.setOnClickListener(v ->{
-                mStoryTv.setText(R.string.T3_Story);
+                mStoryTv.setText(R.string.T2_Story);
+                mRedBtn.setText(R.string.T2_Ans1);
+                mBlueBtn.setText(R.string.T2_Ans2);
             });
 
     }
